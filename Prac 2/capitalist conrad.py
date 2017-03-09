@@ -9,15 +9,15 @@ The price should be displayed to the nearest cent (e.g. $33.59, not $33.59182329
 """
 import random
 
-MAX_INCREASE = 0.1  # 10%
+MAX_INCREASE = 0.175  # 17.5%
 MAX_DECREASE = 0.05  # 5%
-MIN_PRICE = 0.01
-MAX_PRICE = 1000.0
+MIN_PRICE = 1
+MAX_PRICE = 100
 INITIAL_PRICE = 10.0
 
-day = 0
+day = 1
 price = INITIAL_PRICE
-print("${:,.2f}".format(price))
+print("On day {:2}, the price was ${:6,.2f}".format(day, price))
 
 while MIN_PRICE <= price <= MAX_PRICE:
     day += 1
@@ -34,4 +34,4 @@ while MIN_PRICE <= price <= MAX_PRICE:
         price_change = random.uniform(-MAX_DECREASE, 0)
 
     price *= (1 + price_change)
-    print("On day {:3}, the price was ${:8,.2f}".format(day, price))
+    print("On day {:2}, the price was ${:6,.2f}".format(day, price))
