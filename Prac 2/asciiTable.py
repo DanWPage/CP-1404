@@ -2,6 +2,9 @@
 Character to ascii/ ascii to character program.
 """
 
+LOWER = 33
+UPPER = 127
+
 
 def main():
     menu_choice = menu()
@@ -12,6 +15,7 @@ def main():
         else:
             char_to_ascii()
             menu_choice = menu()
+    print_all()
 # --------------------------------------------------------------------------------------------
 
 
@@ -25,8 +29,6 @@ def menu():
 
 
 def ascii_to_char():
-    LOWER = 33
-    UPPER = 127
     ascii_num = int(input("Enter a number between {} and {} :".format(LOWER, UPPER)))
     while ascii_num < LOWER or ascii_num > UPPER:
         ascii_num = int(input("Enter a number between {} and {} :".format(LOWER, UPPER)))
@@ -40,5 +42,12 @@ def char_to_ascii():
     print("The ascii code for {} is {}\n".format(character, ord(character)))
     return
 # ---------------------------------------------------------------------------------------------
+
+
+def print_all():
+    print("ASCII : CHARACTER")
+    for i in range(LOWER,UPPER + 1):
+        print("{:5} : {}".format(i, chr(i)))
+
 
 main()
