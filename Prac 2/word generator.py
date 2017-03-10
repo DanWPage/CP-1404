@@ -8,10 +8,9 @@ import random
 
 VOWELS = "aeiou"
 CONSONANTS = "bcdfghjklmnpqrstvwxyz"
-
-word_format = "ccvcvvc"
+word_format = input("Enter the format. e.g.ccvc: ")
 word = ""
-for kind in word_format:
+for kind in word_format.lower():
     if kind == "c":
         word += random.choice(CONSONANTS)
     else:
