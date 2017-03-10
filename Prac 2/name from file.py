@@ -1,4 +1,6 @@
-
+"""
+    Gets a name from 'name.txt' and prints it on screen.
+"""
 
 name_file = open("name.txt", mode='r')
 name = name_file.read()
