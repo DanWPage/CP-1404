@@ -46,7 +46,7 @@ def char_to_ascii():
 
 def print_all():
     print("ASCII : CHARACTER")
-    for i in range(LOWER,UPPER + 1):
+    for i in range(LOWER, UPPER + 1):
         print("{:5} : {}".format(i, chr(i)))
 
 
