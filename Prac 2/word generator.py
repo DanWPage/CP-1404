@@ -8,9 +8,6 @@ import random
 
 VOWELS = "aeiou"
 CONSONANTS = "bcdfghjklmnpqrstvwxyz"
-
-
-
 print("Use % for consonents, # for vowels or * for either. You also enter any characters you want.")
 word_format = input("Enter the format: ")
 word = ""
