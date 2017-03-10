@@ -1,4 +1,6 @@
-
+"""
+    Asks user for their name and writes it to 'name.txt'
+"""
 
 name = input("What is your name?")
 print("We are watching you {}".format(name))
