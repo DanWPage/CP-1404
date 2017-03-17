@@ -6,11 +6,11 @@
 def main():
     name = get_name()
     increment = get_increment()
-    print_name(name)
+    print_name(name, increment)
 
 
-def print_name(name):
-    for i in range(0, len(name), 2):
+def print_name(name, step):
+    for i in range(0, len(name), step):
         print(name[i], end="")
 
 
@@ -21,7 +21,8 @@ def get_increment():
             number = int(input("Enter the increment: "))
             return number
         except ValueError:
-            pass
+            print("Invalid input")
+
 
 
 def get_name():

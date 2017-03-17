@@ -6,35 +6,34 @@ __author__ = 'Lindsay Ward'
 
 
 def main():
-    choice = menu()
+    choice = get_menu_choice()
     while choice != "q":
         if choice == "c":
-            fahrenheit = celsius_to_fahrenheit()
+            celsius = float(input("Celsius: "))
+            fahrenheit = celsius_to_fahrenheit(celsius)
             print("Result: {:.2f} F".format(fahrenheit))
         else:
-            celsius = fahrenheit_to_celsius()
+            fahrenheit = float(input("Fahrenheit: "))
+            celsius = fahrenheit_to_celsius(fahrenheit)
             print("Result: {:.2f} C".format(celsius))
-        choice = menu()
+        choice = get_menu_choice()menu()
     print("Thank you.")
 
 
-def fahrenheit_to_celsius():
-    fahrenheit = float(input("Fahrenheit: "))
+def fahrenheit_to_celsius(fahrenheit):
     celsius = 5 / 9 * (fahrenheit - 32)
     return celsius
 
 
-def menu():
-    MENU = "\nC - Convert Celsius to Fahrenheit\nF - Convert Fahrenheit to Celsius\nQ (for quit)"
-    print(MENU)
+def get_menu_choice():
+    print("\nC - Convert Celsius to Fahrenheit\nF - Convert Fahrenheit to Celsius\nQ (for quit)")
     choice = input(">>> ")
     while choice.lower() not in ["q", "c", "f"]:
         choice = input(">>> ")
     return choice.lower()
 
 
-def celsius_to_fahrenheit():
-    celsius = float(input("Celsius: "))
+def celsius_to_fahrenheit(celsius):
     fahrenheit = celsius * 9.0 / 5 + 32
     return fahrenheit
 
