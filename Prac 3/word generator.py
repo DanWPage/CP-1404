@@ -30,6 +30,6 @@ def is_valid_format(word_format):
     for char in word_format:
         if char.lower() not in ["c", "v"]:
             return False
-        return True
+    return True
 
 main()
