@@ -13,7 +13,6 @@ Use the debugger to follow what it's doing... then fix it.
 def main():
     scores_file = open("scores.csv")
     scores_data = scores_file.readlines()
-    print(scores_data)
     subjects = scores_data[0].strip().split(",")
     score_values = []
     for score_line in scores_data[1:]:
