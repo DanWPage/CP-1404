@@ -23,9 +23,11 @@ def main():
     scores_file.close()
     for i in range(len(subjects)):
         print(subjects[i], "Scores:")
-        for score in score_values[i]:
-            print(score)
-        print("Max:", max(score_values[i]))
+        scores = []
+        for score in range(len(score_values)):
+            scores.append(score_values[score][i])
+        print(scores)
+        print("Max:", max(scores))
         print()
 
 
