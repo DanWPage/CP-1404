@@ -19,7 +19,7 @@ def get_game():
     game = []
     while len(game) < GAME_LENGTH:
         number = random.randint(1, HIGHEST_NUMBER)
-        while number not in game:
+        if number not in game:
             game.append(number)
     return game
 
