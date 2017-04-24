@@ -1,10 +1,11 @@
 
 class Guitar:
-    CURRENT_YEAR =2017
+    CURRENT_YEAR = 2017
+
     def __init__(self, name='', year=0, cost=0):
         self.name = name
         self.year = year
-        self.cost = cost
+        self.cost = int(cost)
 
     def __str__(self):
         return '{} ({}), ${:.2f}'.format(self.name, self.year, self.cost)
