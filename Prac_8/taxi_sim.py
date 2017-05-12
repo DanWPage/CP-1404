@@ -2,8 +2,8 @@ from Prac_8.cars import Taxi
 from Prac_8.cars import SilverServiceTaxi
 
 TAXIS = [Taxi('Prius', 100),
-         SilverServiceTaxi('Hummer', 200, 4),
-         SilverServiceTaxi('Limo', 100, 2)]
+         SilverServiceTaxi('Limo', 100, 2),
+         SilverServiceTaxi('Hummer', 200, 4),]
 
 
 def main():
@@ -16,10 +16,15 @@ def main():
             taxi = choose_taxi()
         elif menu_choice == "d":
             distance = get_distance()
+            taxi.start_fare()
             taxi.drive(distance)
             bill += taxi.get_fare()
+            print('Your {} trip cost you ${:.2f}'.format(taxi.name, taxi.get_fare()))
         print('Bill to date: ${:.2f}'.format(bill))
         menu_choice = menu()
+    print('Total trip cost: ${:.2f}'.format(bill))
+    print('Taxis are now:')
+    show_taxis()
 
 
 def choose_taxi():
@@ -32,7 +37,8 @@ def get_distance():
 
 
 def menu():
-    choice = input('q)uit, c)hoose taxi, d)rive')
+    print('q)uit, c)hoose taxi, d)rive')
+    choice = input('>>> ')
     return choice
 
 
