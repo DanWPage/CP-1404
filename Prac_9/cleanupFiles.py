@@ -19,12 +19,12 @@ os.chdir('Lyrics/Christmas')
 # os.mkdir('temp')
 
 # loop through each file in the (original) directory
-for filename in os.listdir('.'):
+# for filename in os.listdir('.'):
     # ignore directories, just process files
-    if not os.path.isdir(filename):
-        new_name = file_fixer.get_fixed_filename(filename)
+    # if not os.path.isdir(filename):
+        # new_name = file_fixer.get_fixed_filename(filename)
         # new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
-        print(new_name)
+        # print(new_name)
 
         # Option 1: rename file to new name - in place
         # os.rename(filename, new_name)

@@ -5,6 +5,7 @@ def get_fixed_filename(filename):
     # Replace spaces with underscores and .TXT lower case
     new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
     namelist = list(new_name)
+
     # Make sure the first letter is upper case
     namelist[0] = namelist[0].capitalize()
     for i in range(len(namelist)-2, -1, -1):
@@ -22,13 +23,8 @@ def get_fixed_filename(filename):
         if namelist[i] == '_':
             namelist[i+1] = namelist[i+1].capitalize()
 
-    # Change the list back to a string
-    fixed_name = ''
-    for character in namelist:
-        fixed_name = fixed_name + character
-
     # return the fixed file name
-    return fixed_name
+    return ''.join(namelist)
 
 
 get_fixed_filename('in the little town blah')
