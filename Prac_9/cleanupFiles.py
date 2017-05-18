@@ -23,7 +23,7 @@ for filename in os.listdir('.'):
     # ignore directories, just process files
     if not os.path.isdir(filename):
         new_name = file_fixer.get_fixed_filename(filename)
-        new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
+        # new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
         print(new_name)
 
         # Option 1: rename file to new name - in place
@@ -34,10 +34,10 @@ for filename in os.listdir('.'):
 
 
 # Processing subdirectories using os.walk()
-# os.chdir('..')
-# for dir_name, subdir_list, file_list in os.walk('.'):
-#     print("In", dir_name)
-#     print("\tcontains subdirectories:", subdir_list)
-#     print("\tand files:", file_list)
+os.chdir('..')
+for dir_name, subdir_list, file_list in os.walk('.'):
+    print("In", dir_name)
+    print("\tcontains subdirectories:", subdir_list)
+    print("\tand files:", file_list)
 
 
