@@ -1,7 +1,7 @@
 import os
 import shutil
 
-os.chdir('FilestoSort')
+os.chdir('FilesToSort')
 files = os.listdir('.')
 subfolders = []
 for filename in files:
