@@ -46,35 +46,43 @@ def run_tests():
     # TODO: 2. write assert statements to show if Car sets the fuel correctly
     # Note that Car's __init__ function sets the fuel in one of two ways: using the value passed in or the default
     # You should test both of these
-    assert test_car.fuel == 100
+    assert test_car.fuel == 0
     test_car = Car(fuel=10)
     assert test_car.fuel == 10
 
 
-run_tests()
+# run_tests()
 
 # TODO: 3. Uncomment the following line and run the doctests
-doctest.testmod()
 
 # TODO: 4. Fix the failing is_long_word function (don't change the tests, but the function!)
 
 # TODO: 5. Write and test a function to format a phrase as a sentence - starting with a capital and ending with a single full stop
 # Important: start with a function header and just use pass as the body
 # then add doctests so that:
-# 'hello' -> ''Hello.'
+# 'hello' -> 'Hello.'
 # 'It is an ex parrot.' -> 'It is an ex parrot.'
 # and one more you decide (that's valid!)
 # then write the body of the function so that the tests pass
 
 
-def phrase_o_matic(string):
+def phrase_to_sentence(string):
     """
     Check that the first letter is a capital
     :param string: 'hello'
     :return: 'Hello'
+    >>> phrase_to_sentence('hello')
+    'Hello.'
+    >>> phrase_to_sentence('It is an ex parrot.')
+    'It is an ex parrot.'
+    >>> phrase_to_sentence('Put a full stop on here')
+    'Put a full stop on here.'
     """
+    if string[0].islower():
+        string = string[0].upper() + string[1::]
+    if string[-1] != '.':
+        string += '.'
+    return string
 
-    pass
 
-
-run_tests2()
+doctest.testmod()

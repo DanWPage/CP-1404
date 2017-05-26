@@ -16,7 +16,7 @@ def do_it(n):
 
 def do_something(n):
     if n < 0:
-        return 0
+        return
     print(n ** 2)
     do_something(n - 1)
 
@@ -29,11 +29,11 @@ def do_something(n):
 
 def do_something2(n):
     if n < 0:
-        return 0
+        return
     do_something2(n-1)
     print(n**2)
 
-# do_something2(4)
+do_something2(4)
 
 
 def main():
@@ -43,11 +43,10 @@ def main():
 
 
 def brick_counter(n):
-    count = n
     if n == 1:
         print(n, '=', end=' ')
-        return count
+        return n
     print(n, '+', end=' ')
-    return count + brick_counter(n-1)
+    return n + brick_counter(n-1)
 
-main()
+# main()
