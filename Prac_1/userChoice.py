@@ -4,7 +4,7 @@ def main():
        "(L) Left\n" \
        "(R) Right\n" \
        "(F) Forward\n" \
-       "(Q) Quite"
+       "(Q) Quit"
     print(menu)
     choice = get_choice()
     while choice != 'q':
@@ -19,11 +19,10 @@ def main():
 
 
 def get_choice():
-    choice = input("?")
-    while choice.lower() not in ["l", "r", "f", "q"]:
+    choice = input("?").lower()
+    while choice not in ["l", "r", "f", "q"]:
         print("You must choose either L, R, F or Q")
-        choice = input("?")
-    choice = choice.lower()
+        choice = input("?").lower()
     return choice
 
 main()
